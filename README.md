@@ -1,5 +1,4 @@
 ## Traveling-Salesman-Skeleton
-===========================
 
 This is the skeleton for the kata we'll be using for Coding in the Clink #10 on November 1, 2014.
 
