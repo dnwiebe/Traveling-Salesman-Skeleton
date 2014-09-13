@@ -1,0 +1,43 @@
+A,B,A to B Minutes,A to B Miles,B to A Minutes,B to A Miles
+Seattle,Minneapolis,1440,1656,1437,1656
+Seattle,Portland,171,173,184,173
+Portland,San Francisco,612,635,601,635
+San Francisco,Los Angeles,362,381,378,382
+Los Angeles,Phoenix,335,372,355,372
+Phoenix,Albuquerque,394,421,395,420
+Albuquerque,Dallas,581,643,580,642
+Dallas,Atlanta,681,781,684,781
+Atlanta,Miami,562,660,563,662
+Atlanta,Charlotte,222,245,234,244
+Charlotte,Washington,392,399,371,398
+Washington,Philadelphia,161,139,173,138
+Philadelphia,New York,119,94,114,94
+New York,Boston,229,215,235,215
+Boston,Cleveland,586,638,591,640
+Cleveland,Detroit,160,169,163,170
+Detroit,Chicago,270,285,271,285
+Chicago,Minneapolis,397,409,401,409
+Portland,Denver,1115,1256,1117,1241
+San Francisco,Denver,1108,1267,1111,1252
+San Francisco,Las Vegas,1047,1206,1053,1204
+Los Angeles,Las Vegas,786,907,781,907
+Las Vegas,Albuquerque,107,121,108,122
+Albuquerque,Denver,386,445,381,445
+Denver,Dallas,728,788,741,789
+Denver,Minneapolis,795,914,800,914
+Dallas,Minneapolis,861,940,864,939
+St. Louis,Minneapolis,520,560,517,560
+Dallas,St. Louis,592,630,600,629
+St. Louis,Chicago,279,297,281,304
+St. Louis,Cincinnati,324,349,323,350
+St. Louis,Atlanta,503,553,498,555
+Atlanta,Cincinnati,413,461,411,461
+Cincinnati,Charlotte,445,479,447,477
+Cincinnati,Detroit,250,263,247,263
+Cincinnati,Cleveland,237,249,230,249
+Cincinnati,Washington,492,500,487,505
+Cleveland,Philadelphia,528,432,423,430
+Cincinnati,Chicago,280,295,278,295
+Denver,St. Louis,735,849,750,849
+Cleveland,Charlotte,477,515,484,515
+Seattle,Albuquerque,1334,1435,1331,1434
