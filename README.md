@@ -77,8 +77,9 @@ use to get data in from the map.csv file, if you want.  It doesn't
 understand quotes and it doesn't do escaping; but other than that I 
 have tried not to stifle your creativity, and CSVReader will take just 
 about anything (filename, InputStream, Reader, BufferedReader) and 
-convert it into a List<List<String>>, where the outer List contains 
-rows in the CSV file, and the inner List contains fields in a row.
+convert it into a List of Lists of Strings, where the outer List 
+contains rows in the CSV file, and the inner List contains fields in a 
+row.
 
 #### JUnit and Mockito
 
