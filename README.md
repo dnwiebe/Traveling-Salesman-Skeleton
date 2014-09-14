@@ -37,7 +37,7 @@ at least twice since you're starting there).
 
 ### Data
 
-#### [map.csv](blob/master/src/main/resources/map.csv)
+#### [map.csv](src/main/resources/map.csv)
 
 This file contains comma-separated data you can reference in your 
 solution.
