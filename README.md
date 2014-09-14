@@ -13,7 +13,7 @@ projects.
 For this modified version of the Traveling Salesman, you'll want to 
 write code that can, given a starting location, produce the route from 
 that starting location that visits all the other locations for the 
-lowest possible total cost. You'll have data for both costs of both 
+lowest possible total cost. You'll have data for costs of both 
 time and distance, but you'll only use one kind at once.
 
 #### Modifications
@@ -37,9 +37,10 @@ solution.
 
 I picked 22 major US cities mostly at random, drew lines between them 
 until it looked like enough (it worked out to be 42 of them), and used 
-Google Maps to find the costs of the legs in minutes and miles.  Each 
-line of map.csv has information about the costs in both directions, 
-which are frequently slightly different.
+Google Maps to find the costs of the legs in minutes and miles.  See
+the image at the end of this file.  Each line of map.csv has 
+information about the costs in both directions, which are frequently 
+slightly different.
 
 **Note:** in the provided data, Miami can only be accessed via Atlanta.
 This means that if you're writing an exactly-once algorithm, 1) every 
@@ -103,3 +104,7 @@ code to get you going.  If you haven't, your pair partner will probably
 be able to explain it to you.  If not, there'll be at least one
 facilitator drifting around during the event who knows both JUnit and
 Mockito.
+
+#### Selected Cities and Route Legs
+
+![US Map](map.png)
