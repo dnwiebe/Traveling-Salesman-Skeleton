@@ -48,7 +48,7 @@ Google Maps to find the costs of the legs in minutes and miles.  Each
 line of map.csv has information about the costs in both directions, 
 which are frequently slightly different.
 
-#### [times.csv](https://github.com/dnwiebe/Traveling-Salesman-Skeleton/blob/master/src/main/resources/times.csv)
+#### [times.csv](src/main/resources/times.csv)
 
 I ran my visit-exactly-once algorithm to find a lowest-time route 
 starting at each location; this file is the result.
@@ -63,14 +63,14 @@ your algorithm can find routes in the data that are cheaper than mine.
 If that's the case, good on you; but you could still use one of these 
 routes for an integration test and then correct it when it fails.
 
-#### [distances.csv](https://github.com/dnwiebe/Traveling-Salesman-Skeleton/blob/master/src/main/resources/distances.csv)
+#### [distances.csv](src/main/resources/distances.csv)
 
 I also did the same thing with the distances in map.csv; those results 
 are in distances.csv.
 
 ### Code
 
-#### [CSVReader](https://github.com/dnwiebe/Traveling-Salesman-Skeleton/blob/master/src/main/java/salesman/util/CSVReader.java)
+#### [CSVReader](src/main/java/salesman/util/CSVReader.java)
 
 For some of the folks who come to Coding in the Clink, Java is not 
 their first language.  For those people, figuring out how Java does 
@@ -89,7 +89,8 @@ row.
 #### JUnit and Mockito
 
 The test suite that drove CSVReader, or
-[CSVReaderTest](https://github.com/dnwiebe/Traveling-Salesman-Skeleton/blob/master/src/test/java/salesman/util/CSVReaderTest.java), demonstrates several standard uses of both 
+[CSVReaderTest](src/test/java/salesman/util/CSVReaderTest.java), 
+demonstrates several standard uses of both 
 [JUnit](http://junit.org/), the _de facto_ Java standard for unit 
 testing, and
 [Mockito](https://code.google.com/p/mockito/), the _de facto_
