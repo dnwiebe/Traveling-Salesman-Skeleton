@@ -28,13 +28,6 @@ Also, the classic version requires that you arrive at every location
 exactly once.  We'll start out with an exactly-once solution, but later 
 cards will admit an at-least-once solution.
 
-**Note:** in the provided data, Miami can only be accessed via Atlanta.
-This means that if you're writing an exactly-once algorithm, 1) every 
-one of your routes must either end or begin in Miami, and 2) you won't 
-be able to find a route starting in Atlanta (because you'd have to 
-visit cities on both sides of Atlanta, which would put you in Atlanta 
-at least twice since you're starting there).
-
 ### Data
 
 #### [map.csv](src/main/resources/map.csv)
@@ -47,6 +40,13 @@ until it looked like enough (it worked out to be 42 of them), and used
 Google Maps to find the costs of the legs in minutes and miles.  Each 
 line of map.csv has information about the costs in both directions, 
 which are frequently slightly different.
+
+**Note:** in the provided data, Miami can only be accessed via Atlanta.
+This means that if you're writing an exactly-once algorithm, 1) every 
+one of your routes must either end or begin in Miami, and 2) you won't 
+be able to find a route starting in Atlanta (because you'd have to 
+visit cities on both sides of Atlanta, which would put you in Atlanta 
+at least twice since you're starting there).
 
 #### [times.csv](src/main/resources/times.csv)
 
