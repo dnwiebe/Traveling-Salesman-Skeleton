@@ -1,0 +1,59 @@
+1.1
+Write a failing integration test that loads map.csv, 
+routes according to time from New York, 
+and compares the result to the route in times.csv.
+Fill in the compile errors with null code.
+
+1.2
+Use unit tests to drive code that reads in
+map.csv-format time data and converts it into a
+convenient data structure in memory for
+traversing.
+
+1.3
+Use unit tests to drive code that can find
+the route through a map with only two locations
+and one route leg, but that is perplexed by a
+more complicated map.
+
+1.4
+Design a four-location map with six route legs
+where one route takes less time than the other, and
+drive out code that always finds the least-time
+route.  Never visit a location more than once.
+
+1.5
+Turn your code loose in New York and make sure it
+finds a complete 22-city tour.  Make the integration
+test pass, even if you have to change the asserts.
+
+2.1
+Write another integration test that starts in Atlanta.
+Make sure your code gracefully handles an impossibility.
+Make the integration test pass.
+
+3.1
+Write another integration test starting in New York,
+but this time assert on the route from distances.csv.
+Restructure your code so that you can tell it to
+operate on time or distance, but put only null code
+on the distance side to keep the test failing.
+
+3.2
+Use unit tests to drive the code that will make the
+new integration test pass--again, even if you have
+to change the assert, as long as you have a 22-city
+tour.
+
+4.1
+Modify your Atlanta integration test by replacing its
+assertions.  Assert the route starting in Miami, but
+prefix it with Atlanta--so that it visits Atlanta twice.
+Assert the cost of the Miami route plus the cost of
+the Atlanta-to-Miami leg.
+
+4.2
+Use unit tests, where necessary, to drive modifications
+to allow multiple visits.  See if you can get the Atlanta
+route to calculate in the time you have remaining in
+the cycle.

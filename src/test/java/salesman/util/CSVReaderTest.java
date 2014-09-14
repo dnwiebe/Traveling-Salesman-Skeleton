@@ -1,14 +1,17 @@
 package salesman.util;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Matchers.*;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
@@ -30,6 +33,8 @@ public class CSVReaderTest {
 	@Before
 	public void setup () {
 		String contents = "Header Line\nWhat,we,have,here\nis,a,failure,to,communicate\n";
+		// Spies rather than bare objects so that we can tell whether close ()
+		// has been called.
 		inputStream = spy (new ByteArrayInputStream (contents.getBytes ()));
 		reader = spy (new StringReader (contents));
 		bufferedReader = spy (new BufferedReader (new StringReader (contents)));
@@ -45,11 +50,14 @@ public class CSVReaderTest {
 		List<List<String>> result = subject.read (bufferedReader);
 		
 		assertEquals (expected, result);
+		// Make sure close() was called on bufferedReader.
 		verify(bufferedReader).close ();
 	}
 	
 	@Test
 	public void handlesExceptionFromBufferedReader () throws Exception {
+		// Not a real BufferedReader, just something that looks like a
+		// BufferedReader but throws an exception when directed to read.
 		BufferedReader rdr = mock (BufferedReader.class);
 		doThrow (new IOException ("Hope and change!")).when (rdr).readLine ();
 		
@@ -67,6 +75,7 @@ public class CSVReaderTest {
 		List<List<String>> result = subject.read (reader);
 		
 		assertEquals (expected, result);
+		// Make sure close() was called on reader.
 		verify(reader).close ();
 	}
 	
@@ -75,11 +84,14 @@ public class CSVReaderTest {
 		List<List<String>> result = subject.read (inputStream);
 		
 		assertEquals (expected, result);
+		// Make sure close() was called on inputStream.
 		verify(inputStream).close ();
 	}
 	
 	@Test
 	public void handlesExceptionFromInputStream () throws Exception {
+		// Not a real InputStream, just something that looks like a
+		// InputStream but throws an exception when directed to read.
 		InputStream istr = mock (InputStream.class);
 		doThrow (new IOException ("Hope and change!")).when (istr).read (any (), anyInt (), anyInt ());
 		
@@ -87,8 +99,12 @@ public class CSVReaderTest {
 			subject.read (istr);
 			fail ();
 		}
-		catch (IllegalStateException e) {
-			assertEquals ("Hope and change!", e.getCause ().getMessage ());
+		catch (IllegalStateException wrapper) {
+			// Checked exception IOException wrapped in unchecked
+			// IllegalStateException so callers don't have to mess
+			// with "throws" clauses.
+			IOException e = (IOException)wrapper.getCause ();
+			assertEquals ("Hope and change!", e.getMessage ());
 		}
 	}
 	
@@ -113,8 +129,12 @@ public class CSVReaderTest {
 			subject.read ("Gloobety.csv");
 			fail ();
 		}
-		catch (IllegalStateException e) {
-			assertEquals ("Gloobety.csv (No such file or directory)", e.getCause ().getMessage ());
+		catch (IllegalStateException wrapper) {
+			// Checked exception FileNotFoundException wrapped in unchecked
+			// IllegalStateException so callers don't have to mess
+			// with "throws" clauses.
+			FileNotFoundException e = (FileNotFoundException)wrapper.getCause ();
+			assertEquals ("Gloobety.csv (No such file or directory)", e.getMessage ());
 		}
 	}
 }
