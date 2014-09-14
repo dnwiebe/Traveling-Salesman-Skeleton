@@ -47,13 +47,12 @@ tour.
 
 4.1
 Modify your Atlanta integration test by replacing its
-assertions.  Assert the route starting in Miami, but
-prefix it with Atlanta--so that it visits Atlanta twice.
-Assert the cost of the Miami route plus the cost of
-the Atlanta-to-Miami leg.
+assertions.  Use the assertions from the last line of 
+times.csv or distances.csv.  Make sure it fails for the 
+right reason.
 
 4.2
-Use unit tests, where necessary, to drive modifications
-to allow multiple visits.  See if you can get the Atlanta
-route to calculate in the time you have remaining in
-the cycle.
+Use unit tests, where necessary, to drive modifications 
+to allow multiple visits.  See if you can get the Atlanta 
+route to calculate without a stack overflow in the time 
+you have remaining in the cycle.

@@ -2,7 +2,7 @@ package salesman.util;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
-import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.isA;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
@@ -93,7 +93,7 @@ public class CSVReaderTest {
 		// Not a real InputStream, just something that looks like a
 		// InputStream but throws an exception when directed to read.
 		InputStream istr = mock (InputStream.class);
-		doThrow (new IOException ("Hope and change!")).when (istr).read (any (), anyInt (), anyInt ());
+		doThrow (new IOException ("Hope and change!")).when (istr).read (isA (byte[].class), anyInt (), anyInt ());
 		
 		try {
 			subject.read (istr);

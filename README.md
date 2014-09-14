@@ -1,7 +1,12 @@
 ## Traveling-Salesman-Skeleton
 
 This is the skeleton for the kata we'll be using for Coding in the 
-Clink #10 on November 1, 2014.
+Clink #10 on November 1, 2014.  Since we'll be using Eclipse inside
+the prison, it comes with .classpath and .project files for Eclipse.
+
+However, it's small enough that importing it into any other IDE should
+be straightforward even if the IDE doesn't automatically import Eclipse
+projects.
 
 ### Problem Description
 
@@ -32,7 +37,7 @@ at least twice since you're starting there).
 
 ### Data
 
-#### [map.csv](https://github.com/dnwiebe/Traveling-Salesman-Skeleton/blob/master/src/main/resources/map.csv)
+#### [map.csv](blob/master/src/main/resources/map.csv)
 
 This file contains comma-separated data you can reference in your 
 solution.
