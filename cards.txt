@@ -43,8 +43,9 @@ Distance From New York Design
 Write another integration test starting in New York,
 but this time assert on the route from distances.csv.
 Restructure your code so that you can tell it to
-operate on time or distance, but put only null code
-on the distance side to keep the test failing.
+operate on either time or distance, but put only
+null code on the distance side to keep the test
+failing.
 
 3.2
 Distance Implementation
